@@ -6,4 +6,6 @@ class PatientsRepositoryInterface(ABC):
 
     @abstractmethod
     def get_all(self):
+        """abstractmethod"""
+
         raise Exception("Method not implemented")

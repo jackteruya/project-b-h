@@ -5,6 +5,8 @@ from infra.db import Base
 
 
 class Transactions(Base):
+    """Transactions Model"""
+
     __tablename__ = "TRANSACTIONS"
 
     uuid = Column(String(256), primary_key=True, name="UUID", unique=True, index=True)
@@ -16,3 +18,12 @@ class Transactions(Base):
     pharmacy = relationship("Pharmacies")
     amount = Column(NUMERIC, name="AMOUNT")
     timestamp = Column(DATETIME(timezone=True), name="TIMESTAMP", autoincrement=True)
+
+    def __repr__(self):
+        return (
+            f"Transaction: ["
+            f"uuid={self.uuid}, "
+            f"patient_uuid={self.patient_uuid}, "
+            f"pharmacy_uuid={self.pharmacy_uuid}"
+            f"]"
+        )

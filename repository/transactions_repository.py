@@ -6,6 +6,8 @@ from src.transactions.data.interface import TransactionsRepositoryInterface
 
 
 class TransactionsRepository(TransactionsRepositoryInterface):
+    """Transactions Repository"""
+
     def __init__(self):
         self._db_connection = DBConnectionHandler
 

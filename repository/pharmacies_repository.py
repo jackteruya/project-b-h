@@ -6,6 +6,8 @@ from src.pharmacies.data.interface import PharmaciesRepositoryInterface
 
 
 class PharmaciesRepository(PharmaciesRepositoryInterface):
+    """Pharmacies Repository"""
+
     def __init__(self):
         self._db_connection = DBConnectionHandler
 

@@ -6,6 +6,8 @@ from src.patients.data.interface import PatientsRepositoryInterface
 
 
 class PatientsRepository(PatientsRepositoryInterface):
+    """Patients Repository"""
+
     def __init__(self):
         self._db_connection = DBConnectionHandler
 
