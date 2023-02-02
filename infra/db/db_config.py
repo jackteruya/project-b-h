@@ -1,12 +1,19 @@
+import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 
 class DBConnectionHandler:
     """Sqlalchemy database connection"""
 
     def __init__(self):
-        self.__connection_string = "sqlite:///storage.db"
+        self.__connection_string = f"{os.getenv('DB_URL')}"
         self.session = None
 
     def get_engine(self):
