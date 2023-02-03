@@ -1,0 +1,10 @@
+services:
+  app-health:
+    build:
+      context: .
+      dockerfile: ./infra/Dockerfile
+    command: sh -c "uvicorn application.server:app --host 0.0.0.0"
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
