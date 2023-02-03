@@ -19,7 +19,6 @@ class UsersRepository(UserRepositoryInterface):
                     .filter_by(username=username)
                     .first()
                 )
-                print(data, "ddd")
                 return data
 
         except NoResultFound:
