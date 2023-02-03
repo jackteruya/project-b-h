@@ -14,3 +14,7 @@ class PharmaciesUseCase:
             Pharmacies(**pharmacy.__dict__) for pharmacy in self._repository().get_all()
         ]
         return pharmacies_list
+
+    def get_by_uuid(self, uuid: str):
+        """Return pharmacy by uuid"""
+        return Pharmacies(**self._repository().get_by_uuid(uuid).__dict__)

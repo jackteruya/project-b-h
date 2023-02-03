@@ -9,3 +9,9 @@ class PharmaciesRepositoryInterface(ABC):
         """abstractmethod"""
 
         raise Exception("Method not implemented")
+
+    @abstractmethod
+    def get_by_uuid(self, uuid: str):
+        """abstractmethod"""
+
+        raise Exception("Method not implemented")
