@@ -18,4 +18,6 @@ class UsersUseCase:
 
     def get_user_by_username(self, username: str):
         """Get user by username"""
-        return Users(**self._repository().get_by_username(username).__dict__)
+        user = self._repository().get_by_username(username)
+        user = Users(**user.__dict__)
+        return user

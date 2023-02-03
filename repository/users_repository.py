@@ -16,9 +16,10 @@ class UsersRepository(UserRepositoryInterface):
             with self._db_connection() as db_connection:
                 data = (
                     db_connection.session.query(UsersModel)
-                    .filter(UsersModel.username == username)
+                    .filter_by(username=username)
                     .first()
                 )
+                print(data, "ddd")
                 return data
 
         except NoResultFound:
