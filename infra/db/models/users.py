@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, UUID
+import uuid
+from sqlalchemy import Column, String
 
 from infra.db import Base
 
@@ -8,7 +9,14 @@ class Users(Base):
 
     __tablename__ = "USERS"
 
-    uuid = Column(UUID, primary_key=True, name="UUID", unique=True, index=True)
+    uuid = Column(
+        String(256),
+        primary_key=True,
+        name="UUID",
+        unique=True,
+        index=True,
+        default=str(uuid.uuid4()),
+    )
     username = Column(String(50), name="USERNAME")
     password = Column(String(256), name="PASSWORD")
 
