@@ -9,7 +9,7 @@ router: APIRouter = APIRouter(prefix="/patients")
 
 
 @router.get("", response_model=List[Patient])
-def get_patients_by_uuid():
+def get_all_patients():
     """Endpoint to return all patients"""
 
     return PatientsUseCase().get_all()
