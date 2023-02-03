@@ -24,3 +24,17 @@ class PatientsRepository(PatientsRepositoryInterface):
             raise
         finally:
             db_connection.session.close()
+
+    def get_by_uuid(self, uuid: str):
+        try:
+            with self._db_connection() as db_connection:
+                data = db_connection.session.query(PatientsModel).get(uuid)
+                return data
+
+        except NoResultFound:
+            return []
+        except:
+            db_connection.session.rollback()
+            raise
+        finally:
+            db_connection.session.close()

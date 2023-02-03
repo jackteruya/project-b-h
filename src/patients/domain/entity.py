@@ -3,7 +3,7 @@ from datetime import datetime
 from pydantic.main import BaseModel
 
 
-class Patient(BaseModel):
+class Patients(BaseModel):
     """Patient Entity"""
 
     uuid: str
