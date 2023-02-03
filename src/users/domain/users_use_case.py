@@ -19,5 +19,7 @@ class UsersUseCase:
     def get_user_by_username(self, username: str):
         """Get user by username"""
         user = self._repository().get_by_username(username)
+        if not user:
+            raise ValueError("Usuario não cadastrado")
         user = Users(**user.__dict__)
         return user
